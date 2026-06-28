@@ -1,0 +1,17 @@
+name = "checkin-worker"
+main = "src/index.js"
+compatibility_date = "2024-09-01"
+compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
+
+[triggers]
+crons = ["20 */3 * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "checkin"
+database_id = "2eed5fac-db2f-4a2d-b137-ad4a1694cf86"
+
+[vars]
+ADMIN_PASSWORD = "mange"
+# CF_EMAIL_DOMAIN = "your-domain.com"  # 启用 CF 临时邮箱时设置你的域名
+# PROXY_URLS = "https://relay1.example.workers.dev,https://relay2.example.workers.dev"  # IP 轮询代理列表
